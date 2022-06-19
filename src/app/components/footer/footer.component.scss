@@ -1,0 +1,11 @@
+footer{
+    padding: 1em 0;
+    p{
+        margin: 0;
+        text-align: center;
+        font-size: 0.85em;
+        @media(min-width: 48em){
+            text-align: right;
+        }
+    }
+}

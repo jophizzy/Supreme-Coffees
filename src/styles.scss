@@ -1,0 +1,298 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(./assets/fonts/WaterBrushROB.ttf);
+}
+
+$screen-sm : 48em !default;
+$screen-md : 62em !default;
+$screen-lg : 75em !default;
+$screen-xl : 80em !default;
+$maxWidth : 80em;
+$maxWidthContainer : 90em;
+$primary : #A17C51 !default;
+$secondary : black;
+$font : Avenir, 'sans-seri'; 
+$font2 : myFirstFont;
+
+body {
+    display: block !important;
+    margin: 0;
+}
+
+.font{
+    font-family: $font;
+}
+
+.font2 {
+    font-family: $font2;
+}
+
+.white{
+    color: white;
+}
+
+.sc-container {
+    max-width: $maxWidth;
+    width: 90%;
+    margin: 0 auto;
+    @media(min-width: $screen-xl){
+        max-width: $maxWidthContainer;
+    }
+    &.full {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+ul.ngx-pagination,
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.text-center{
+    text-align: center;
+}
+
+ul.ngx-pagination,
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-primary {
+    background-color: $primary;
+}
+
+.bg-secondary {
+    background-color: $secondary;
+}
+
+.primary {
+    color: $primary;
+}
+
+.secondary {
+    color: $secondary;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.background-center{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.relative{
+    position: relative;
+    z-index: 3;
+}
+
+.button{
+    font-family: $font;
+    padding: 0.8em 0.8em;
+    position: relative;
+    z-index: 1;
+    min-width: 200px;
+    width: auto;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0;
+    font-weight: 700;
+    text-transform: lowercase;
+    color: white;
+    background-color: $primary;;
+    border: 1px solid $primary;;
+    text-align: center;
+    appearance: none;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    text-shadow: none;
+    text-decoration: none;
+    overflow: hidden;
+    -webkit-transition: border-color 0.3s, color 0.3s;
+    transition: border-color 0.3s, color 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150%;
+        height: 100%;
+        background: $primary;
+        z-index: -1;
+        -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+        transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+        transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+    }
+
+    &:hover {
+        color: $primary;
+        border-color: $primary;
+        &::before {
+            opacity: 1;
+            background-color: white;
+            -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+            -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+        }
+    }
+}
+
+ul.ngx-pagination {
+    padding: 0;
+    margin:2em auto 0 auto;
+    &:before,
+    &:after{
+        content: none;
+        display: none;
+    }
+    li{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.25em 0.5em;
+        & > span,
+        a{
+            width: 2.5em;
+            height: 2.5em;
+            color: $primary;
+            font-family: $font;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            border: 2px solid $primary;
+            transition: 0.2s all ease-in-out;
+            border-radius: 50%;
+            &:hover{
+                color: white;
+                border-color: $secondary;
+                background-color: $secondary;
+            }
+        }
+        &.current{
+            padding: 0;
+            background-color: transparent;
+            &>span,
+            a{
+                color: white;
+                background-color: $primary;
+            }
+        }
+        &.pagination-previous,
+        &.pagination-next{
+            width: auto;
+            padding: 0 0.9em;
+            background-color: transparent;
+            color: $primary;
+            a,
+            span{
+                border: 0;
+                width: auto;
+                color: $primary;
+                &:hover{
+                    background-color: transparent;
+                    color: $secondary;
+                }
+                &:before {
+                    content: "";
+                }
+            }
+            &.disabled{
+                color: #808080;
+                opacity: 0.4;
+                a,
+                span {
+                    color: #808080;
+                }
+            }
+            @media(max-width: $screen-sm){
+                display: none;
+            }
+        }
+
+        &.pagination-previous.disabled:before,
+        &.pagination-previous:before{
+            content: "\2190";
+        }
+
+        &.pagination-next.disabled:after,
+        &.pagination-next a:after {
+            content: "\2192";
+        }
+    }
+}
+
+body.body-scrolled{
+    .navbar{
+        top: -10%;
+        transition: 0.1s all ease-in-out;
+    }
+    .navbar-scrolled{
+        top:0;
+        transition: 0.3s all ease-in-out;
+    }
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.spinner-loader{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left:0;
+    top:0;
+    background-color: $primary;
+    z-index: 2000;
+    opacity: 1;
+    transition: 0.5s all ease-in-out;
+    .loader {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+        border: 10px solid white;
+        border-top-color: $primary;
+        box-sizing: border-box;
+        background: transparent;
+        animation: loading 1s linear infinite;
+    }
+
+    @keyframes loading {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        0% {
+            transform: rotate(360deg);
+        }
+    }
+    &.hidden{
+        opacity: 0;
+        z-index: -200;
+        transition: 0.5s all ease-in-out;
+    }
+}

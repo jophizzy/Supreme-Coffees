@@ -1,0 +1,29 @@
+<app-banner image="assets/img/coffee_image.jpg" text={{detail?.blend_name}}></app-banner>
+
+<div class="sc-container coffees-div">
+    <table>
+        <caption class="font">Coffee Detail</caption>
+        <thead>
+            <tr>
+                <th scope="col" class="font">ID</th>
+                <th scope="col" class="font">UID</th>
+                <th scope="col" class="font">Blend Name</th>
+                <th scope="col" class="font">Origin</th>
+                <th scope="col" class="font">Variety</th>
+                <th scope="col" class="font">Notes</th>
+                <th scope="col" class="font">Intensifier</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="ID" class="font">{{detail?.id}}</td>
+                <td data-label="UID" class="font">{{detail?.uid}}</td>
+                <td data-label="Blend Name" class="font">{{detail?.blend_name}}</td>
+                <td data-label="Origin" class="font">{{detail?.origin}}</td>
+                <td data-label="Variety" class="font">{{detail?.variety}}</td>
+                <td data-label="Notes" class="font">{{detail?.notes}}</td>
+                <td data-label="Intensifier" class="font">{{detail?.intensifier}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

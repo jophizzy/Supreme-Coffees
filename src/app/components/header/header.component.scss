@@ -1,0 +1,79 @@
+.navbar-scrolled,
+.navbar{
+    position: fixed;
+    top:0;
+    width: 100%;
+    padding: 0.4em 0;
+    z-index: 1000;
+    background-color: rgba(#ffffff, 0.8);
+    transition: 0.3s all ease-in-out;
+    box-shadow: 0 0 0.25em rgba(black, 0.1);
+    .logo-div{
+        width: auto;
+        img{
+            height: 4em;
+        }
+    }
+    .menu-div {
+        width: auto;
+        align-items: center;
+        justify-content: flex-end;
+        .menu-items{
+            justify-content: flex-end;
+            margin:0;
+            padding:0;
+            list-style: none;
+            li{
+                list-style: none;
+                margin-left: 1.7em;
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-size: 1.2em;
+                    position: relative;
+                    transition: 0.2s all ease-in-out;
+                    &:after,
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: black;
+                        transition: all 0.2s ease-in-out;
+                    }
+                    &:after{
+                        left:0;
+                    }
+                    &:before{
+                        right: 0;
+                    }
+                    &:hover{
+                        &:after,
+                        &:before{
+                            width: 50%;
+                        }
+                    }
+                    @media(min-width: 48em) {
+                        font-size: 1.4em;
+                    }
+                }
+                @media(min-width: 48em){
+                    margin-left: 3em;
+                }
+            }
+        }
+    }
+}
+
+.navbar-scrolled{
+    top: -10%;
+    background-color: #A17C51;
+    transition: 0.1s all ease-in-out;
+    .menu-div .menu-items li a {
+        color: white !important;
+    }
+    .logo-div img{
+        height: 3em;
+    }
+}

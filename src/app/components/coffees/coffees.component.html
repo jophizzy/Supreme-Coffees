@@ -1,0 +1,37 @@
+<div id="preloader-spin" class="spinner-loader flex flex-center">
+    <div class="loader"></div>
+</div>
+<app-banner image="assets/img/coffee_image.jpg" text="Coffees"></app-banner>
+<div class="component-col">
+    <div class="sc-container coffees-div">
+        <h1 class="primary font text-center titleList">Our Coffees<hr></h1>
+        <div class="flex flex-center flex-col">
+            <div class="col-coffee" *ngFor="let coffee of coffees | paginate: { itemsPerPage: count, currentPage: page }; index as i;">
+                <a (click)="setCoffeeDetail(coffee)" class="col-info flex background-center flex-center">
+                    <div class="image-col relative">
+                        <img *ngIf="i % 13 == 0" src="/assets/img/coffeeImage1.png" />
+                        <img *ngIf="i % 13 == 1" src="/assets/img/coffeeImage2.png" />
+                        <img *ngIf="i % 13 == 2" src="/assets/img/coffeeImage3.png" />
+                        <img *ngIf="i % 13 == 3" src="/assets/img/coffeeImage4.png" />
+                        <img *ngIf="i % 13 == 4" src="/assets/img/coffeeImage5.png" />
+                        <img *ngIf="i % 13 == 5" src="/assets/img/coffeeImage6.png" />
+                        <img *ngIf="i % 13 == 6" src="/assets/img/coffeeImage7.png" />
+                        <img *ngIf="i % 13 == 7" src="/assets/img/coffeeImage8.png" />
+                        <img *ngIf="i % 13 == 8" src="/assets/img/coffeeImage9.png" />
+                        <img *ngIf="i % 13 == 9" src="/assets/img/coffeeImage10.png" />
+                        <img *ngIf="i % 13 == 10" src="/assets/img/coffeeImage11.png" />
+                        <img *ngIf="i % 13 == 11" src="/assets/img/coffeeImage12.png" />
+                        <img *ngIf="i % 13 == 12" src="/assets/img/coffeeImage13.png" />
+                    </div>
+                    <div class="box text-center">
+                        <h2 class="font">{{coffee?.blend_name}}</h2>
+                        <p class="font origin"><b>Origin: </b>{{coffee?.origin}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="text-right">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
