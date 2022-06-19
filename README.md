@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `npm i npm-install-peers -D`
+Run `npm i npm-install-peers -D` to install the node modules and ignore peer dependencies
 Node Version 16.15.1
 Npm Version 8.11.0
 
