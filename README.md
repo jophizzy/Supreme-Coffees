@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+Run `npm i npm-install-peers -D`
 Node Version 16.15.1
 Npm Version 8.11.0
 
